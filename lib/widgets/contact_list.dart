@@ -13,13 +13,13 @@ class ContactList extends StatelessWidget {
         shrinkWrap: true,
         itemCount: info.length,
         itemBuilder: (context, index){
-          return Column(
-            children: [
-              InkWell(
-                onTap: (){},
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: ListTile(
+          return InkWell(
+            onTap: (){},
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Column(
+                children: [
+                  ListTile(
                     leading: CircleAvatar(
                       radius: 30,
                       backgroundImage: NetworkImage(
@@ -36,10 +36,10 @@ class ContactList extends StatelessWidget {
                     trailing: Text(info[index]['time'].toString(),
                       style: const TextStyle(fontSize: 13, color: Colors.grey),),
                   ),
-                ),
+                  const Divider(color: dividerColor, indent: 80,)
+                ],
               ),
-              const Divider(color: dividerColor, indent: 80,)
-            ],
+            ),
           );
         }
     ),

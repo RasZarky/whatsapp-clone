@@ -1,21 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/widgets/contact_list.dart';
+import 'package:whatsapp_clone/widgets/web_profile_bar.dart';
+import 'package:whatsapp_clone/widgets/web_search_bar.dart';
 
 class WebScreen extends StatelessWidget {
   const WebScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Column(
-            children: [
-
-
-              ContactList()
-            ],
+          const Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  WebProfileBar(),
+                  WebSearchBar(),
+                  ContactList()
+                ],
+              ),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width*0.70,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/backgroundImage.png"),
+                fit: BoxFit.cover
+              )
+            ),
           )
         ],
       ),
