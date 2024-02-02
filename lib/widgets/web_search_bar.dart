@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/colors.dart';
 
@@ -16,10 +15,24 @@ class WebSearchBar extends StatelessWidget {
           bottom: BorderSide(color: dividerColor)
         )
       ),
-      child: const TextField(
+      child: TextField(
         decoration: InputDecoration(
+          filled: true,
           fillColor: searchBarColor,
-          prefixIcon: Padding(padding: EdgeInsets.symmetric(horizontal: 20))
+          prefixIcon: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Icon(Icons.search, size: 20,),
+          ),
+          hintStyle: const TextStyle(fontSize: 14),
+          hintText: "search or start a new chat",
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: const BorderSide(
+              width: 0,
+              style: BorderStyle.none
+            )
+          ),
+          contentPadding: const EdgeInsets.all(10)
         ),
       ),
     );
