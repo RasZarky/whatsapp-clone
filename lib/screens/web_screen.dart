@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/widgets/contact_list.dart';
+import 'package:whatsapp_clone/widgets/web_chat_appbar.dart';
 import 'package:whatsapp_clone/widgets/web_profile_bar.dart';
 import 'package:whatsapp_clone/widgets/web_search_bar.dart';
 
@@ -30,6 +31,11 @@ class WebScreen extends StatelessWidget {
                 image: AssetImage("assets/backgroundImage.png"),
                 fit: BoxFit.cover
               )
+            ),
+            child: const Column(
+              children: [
+                WebChatAppBar()
+              ],
             ),
           )
         ],
