@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/widgets/chat_list.dart';
 import 'package:whatsapp_clone/widgets/contact_list.dart';
 import 'package:whatsapp_clone/widgets/web_chat_appbar.dart';
 import 'package:whatsapp_clone/widgets/web_profile_bar.dart';
@@ -34,7 +35,8 @@ class WebScreen extends StatelessWidget {
             ),
             child: const Column(
               children: [
-                WebChatAppBar()
+                WebChatAppBar(),
+                Expanded(child: ChatList())
               ],
             ),
           )

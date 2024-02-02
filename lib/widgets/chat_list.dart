@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:whatsapp_clone/info.dart';
 import 'package:whatsapp_clone/widgets/my_message_card.dart';
+import 'package:whatsapp_clone/widgets/sender_message_card.dart';
 
-class Chatalist extends StatelessWidget {
-  const Chatalist({super.key});
+class ChatList extends StatelessWidget {
+  const ChatList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,8 @@ class Chatalist extends StatelessWidget {
           return MyMessageCard(message: messages[index]["text"].toString(),
               date: messages[index]["time"].toString());
         }
+        return SenderMessageCard(message: messages[index]["text"].toString(),
+            date: messages[index]["time"].toString());
       },
     );
   }
