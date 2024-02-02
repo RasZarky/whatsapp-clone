@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:whatsapp_clone/info.dart';
+import 'package:whatsapp_clone/widgets/my_message_card.dart';
 
 class Chatalist extends StatelessWidget {
   const Chatalist({super.key});
@@ -10,7 +11,8 @@ class Chatalist extends StatelessWidget {
       itemCount: messages.length,
       itemBuilder: (context, index) {
         if(messages[index]["isMe"] == true ){
-          
+          return MyMessageCard(message: messages[index]["text"].toString(),
+              date: messages[index]["time"].toString());
         }
       },
     );
